@@ -50,12 +50,12 @@
 
 :root{
 	--primary-color			: #000000;
-	--secondary-color		: #FFF4F1;
+	--secondary-color		: #ce9c5b;
 	--text-color			: #525252;
-	--accent-color			: #fe5d35;
-	--white-color			: #FFFFFF;
+	--accent-color			: #d92800;
+	--white-color			: #f3dbbb;
 	--divider-color			: #FFFFFF26;
-	--dark-divider-color	: #E9E9E9;
+	--dark-divider-color	: #e9e9e9;
 	--error-color			: rgb(230, 87, 87);
 	--default-font			: "Fira Sans Condensed", sans-serif;
 }
