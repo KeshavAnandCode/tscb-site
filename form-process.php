@@ -37,10 +37,10 @@
 		$message = $_POST["message"];
 	}
 
-	$subject = 'Contact Inquiry from Physiocare Website';
+	$subject = 'Contact Inquiry from Website';
 
 	//$EmailTo = "info@yourdomain.com"; // Replace with your email.
-    $EmailTo = "awaikentechnology@gmail.com";
+    $EmailTo = "texasscholasticcricketboard@gmail.com";
     
 	// prepare email body text
 	$Body = "";
