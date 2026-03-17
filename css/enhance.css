@@ -973,13 +973,21 @@ body {
 
     /* Mission image at tablet: clear the circle-offset padding */
     .mission-img {
-        padding: 0 0 0 0 !important;
+        padding: 0 !important;
         text-align: center !important;
         margin-top: 30px !important;
     }
 
-    .mission-img figure,
+    /* Fix inline-flex reveal figure so it fills full width on mobile */
+    .mission-img .reveal,
+    .mission-img figure {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Landscape aspect-ratio on mobile; override height:100% from .reveal img */
     .mission-img img {
+        height: auto !important;
         aspect-ratio: 16 / 9 !important;
         border-radius: 0 0 50px 0 !important;
     }
@@ -1044,9 +1052,8 @@ body {
         margin-bottom: 0 !important;
     }
 
-    .mission-img figure,
+    /* Tighter corner radius at phone size; display:block & height:auto inherit from 991px */
     .mission-img img {
-        aspect-ratio: 16 / 9 !important;
         border-radius: 0 0 40px 0 !important;
     }
 
