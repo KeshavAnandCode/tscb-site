@@ -2,6 +2,7 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import path from "path";
 
 const app = express();
 const httpServer = createServer(app);
@@ -21,6 +22,10 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: false }));
+
+// Serve static HTML files and assets from the project root directory
+// This enables index.html, about.html, css/, images/, js/ etc. to be accessible
+app.use(express.static(path.resolve(import.meta.dirname, "..")));
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
