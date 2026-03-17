@@ -19,26 +19,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <!-- Bootstrap Css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!-- SlickNav Css -->
-    <link href="css/slicknav.min.css" rel="stylesheet">
-    <!-- Swiper Css -->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <!-- Font Awesome Icon Css-->
-    <link href="css/all.css" rel="stylesheet" media="screen">
-    <!-- Animated Css -->
-    <link href="css/animate.css" rel="stylesheet">
-    <!-- Magnific Popup Core Css File -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- Mouse Cursor Css File -->
-    <link rel="stylesheet" href="css/mousecursor.css">
-    <!-- Audio Css File -->
-    <link rel="stylesheet" href="css/plyr.css">
-    <!-- Main Custom Css -->
-    <link href="css/custom.css" rel="stylesheet" media="screen">
-    <!-- Enhanced Animations Css -->
-    <link href="css/enhance.css" rel="stylesheet" media="screen">
+    <!-- Preload critical image -->
+    <link rel="preload" href="images/page-header-bg.jpg" as="image">
+    <!-- Bundled CSS -->
+    <link href="css/bundle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -141,7 +125,7 @@
                             <div class="contact-info-item wow fadeInUp" data-wow-delay="0.25s">
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
-                                    <img src="images/icon-phone.svg" alt="">
+                                    <img loading="lazy" src="images/icon-phone.svg" alt="">
                                 </div>
                                 <!-- Icon Box End -->
 
@@ -158,7 +142,7 @@
                             <div class="contact-info-item wow fadeInUp" data-wow-delay="0.5s">
                                 <!-- Icon Box Start -->
                                 <div class="icon-box">
-                                    <img src="images/icon-mail.svg" alt="">
+                                    <img loading="lazy" src="images/icon-mail.svg" alt="">
                                 </div>
                                 <!-- Icon Box End -->
 
@@ -329,7 +313,7 @@
                             <!-- Footer Info Box Start -->
                             <div class="footer-info-box">
                                 <div class="icon-box">
-                                    <img src="images/icon-phone.svg" alt="">
+                                    <img loading="lazy" src="images/icon-phone.svg" alt="">
                                 </div>
                                 <div class="footer-info-box-content">
                                     <p>(+1) (945) 900-1148</p>
@@ -340,7 +324,7 @@
                             <!-- Footer Info Box Start -->
                             <div class="footer-info-box">
                                 <div class="icon-box">
-                                    <img src="images/icon-mail.svg" alt="">
+                                    <img loading="lazy" src="images/icon-mail.svg" alt="">
                                 </div>
                                 <div class="footer-info-box-content">
                                     <p>texasscholasticcricketboard@gmail.com</p>
@@ -386,38 +370,7 @@
 
 
     <!-- Jquery Library File -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- Bootstrap js file -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Validator js file -->
-    <script src="js/validator.min.js"></script>
-    <!-- SlickNav js file -->
-    <script src="js/jquery.slicknav.js"></script>
-    <!-- Swiper js file -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <!-- Counter js file -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <!-- Magnific js file -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/SmoothScroll.js"></script>
-    <!-- Parallax js -->
-    <script src="js/parallaxie.js"></script>
-    <!-- MagicCursor js file -->
-    <script src="js/gsap.min.js"></script>
-    <script src="js/magiccursor.js"></script>
-    <!-- Text Effect js file -->
-    <script src="js/SplitText.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <!-- YTPlayer js File -->
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    <!-- Audio js File -->
-    <script src="js/plyr.js"></script>
-    <!-- Wow js file -->
-    <script src="js/wow.js"></script>
-    <!-- Main Custom js file -->
-    <script src="js/function.js"></script>
+    <script src="js/bundle-core.js"></script>
     <!-- Enhanced Animations js -->
     <script src="js/enhance.js"></script>
 </body>
