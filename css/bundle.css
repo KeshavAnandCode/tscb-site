@@ -10828,14 +10828,28 @@ body {
 }
 
 /* ============================================================
-   CRICKET IMAGE (first about section) — Natural aspect ratio
-   Let the image display at its own proportions; no forced crop.
+   CRICKET IMAGE (first about section) — Natural aspect ratio,
+   width shrinks to fit; height constrained to match text column.
    ============================================================ */
+.page-about-us .about-img-1 {
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+.page-about-us .about-img-1 figure {
+    display: flex !important;
+    justify-content: center !important;
+}
+
 .page-about-us .about-img-1 img {
-    aspect-ratio: unset !important;
-    max-height: none !important;
+    width: auto !important;
+    max-width: 100% !important;
     height: auto !important;
+    max-height: 480px !important;
+    aspect-ratio: unset !important;
     object-position: center center !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 /* ============================================================
