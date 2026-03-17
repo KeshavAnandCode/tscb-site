@@ -937,3 +937,389 @@ body {
 .counter-content h3 {
     transition: color 0.35s ease, text-shadow 0.35s ease;
 }
+
+/* ============================================================
+   MOBILE POLISH v2 — Comprehensive phone & tablet refinements
+   These rules come last so they win the cascade cleanly.
+   ============================================================ */
+
+/* ---- Shared utility: word-wrap for long strings ---- */
+.footer-info-box-content p,
+.contact-info-content h3,
+.footer-contact-details p {
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* ============================================================
+   TABLET (≤ 991px)
+   ============================================================ */
+@media (max-width: 991px) {
+
+    /* About section on home: remove left margin that persists */
+    .about-content {
+        margin-left: 0 !important;
+    }
+
+    /* Mission section: stack order — text first, image below */
+    .our-mission .row {
+        flex-direction: column !important;
+    }
+
+    .our-mission .col-lg-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Mission image at tablet: clear the circle-offset padding */
+    .mission-img {
+        padding: 0 0 0 0 !important;
+        text-align: center !important;
+        margin-top: 30px !important;
+    }
+
+    .mission-img figure,
+    .mission-img img {
+        aspect-ratio: 16 / 9 !important;
+        border-radius: 0 0 50px 0 !important;
+    }
+
+    /* CTA box: centre button at tablet */
+    .cta-box-btn {
+        text-align: center !important;
+        margin-top: 24px !important;
+    }
+
+    /* About us section padding tighter at tablet */
+    .about-us {
+        padding: 60px 0 !important;
+    }
+}
+
+/* ============================================================
+   PHONE LANDSCAPE / LARGE PHONE (≤ 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+
+    /* --- Hero: pull padding WAY in --- */
+    .hero {
+        padding: 105px 0 70px !important;
+        margin-top: -75px !important;
+    }
+
+    /* --- Hero: center the CTA buttons --- */
+    .hero-content-body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 14px !important;
+        margin-top: 24px !important;
+    }
+
+    .hero-content-body .btn-default,
+    .hero-content-body .btn-default.btn-highlighted {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* Hero subtitle (h3) — slightly tighter */
+    .hero-content .section-title h3 {
+        font-size: 14px !important;
+        margin-bottom: 16px !important;
+    }
+
+    /* Hero paragraph text: max-width on mobile */
+    .hero-content .section-title p {
+        font-size: 15px !important;
+        max-width: 85% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* --- Mission image: no decorative offset (life circle is hidden) --- */
+    .mission-img {
+        padding: 0 !important;
+        text-align: center !important;
+        margin-top: 28px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .mission-img figure,
+    .mission-img img {
+        aspect-ratio: 16 / 9 !important;
+        border-radius: 0 0 40px 0 !important;
+    }
+
+    /* --- Mission content: centre-align the sub-label + heading --- */
+    .mission-content .section-title {
+        text-align: center !important;
+    }
+
+    /* Keep the decorative icon visible when centred */
+    .mission-content .section-title h3 {
+        padding-left: 25px !important;
+    }
+
+    /* Mission footer: centre the CTA button */
+    .mission-content-footer {
+        text-align: center !important;
+        margin-top: 20px !important;
+    }
+
+    /* --- About section (home): tighten + centre footer btn --- */
+    .about-us {
+        padding: 50px 0 !important;
+    }
+
+    .about-us-footer {
+        text-align: center !important;
+        margin-top: 8px !important;
+    }
+
+    /* About content body: 1 column gap fix */
+    .about-content-body {
+        gap: 16px !important;
+        margin-bottom: 28px !important;
+    }
+
+    /* --- CTA box: centre everything --- */
+    .cta-box-content .section-title {
+        text-align: center !important;
+    }
+
+    .cta-box-btn {
+        text-align: center !important;
+        margin-top: 20px !important;
+    }
+
+    /* --- Dallas / Austin league links: tighter padding --- */
+    .league-links .btn-default {
+        font-size: 14px !important;
+        padding: 12px 56px 12px 16px !important;
+    }
+
+    /* --- Services section: tighter padding --- */
+    .our-services {
+        padding: 50px 0 20px !important;
+    }
+
+    /* Service items: centre footer row */
+    .service-footer {
+        align-items: flex-start !important;
+    }
+
+    /* --- Service ticker: smaller on phone --- */
+    .service-ticker .scrolling-content span {
+        font-size: 52px !important;
+    }
+
+    /* --- Teams grid: consistent image heights on mobile --- */
+    .team-image figure,
+    .team-image img {
+        aspect-ratio: 4 / 3 !important;
+        object-fit: cover !important;
+    }
+
+    /* --- Contact page: email wrapping --- */
+    .contact-info-content h3 {
+        font-size: 14px !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Contact info items: tighter layout */
+    .contact-info-item {
+        padding: 16px !important;
+        gap: 14px !important;
+    }
+
+    /* --- Footer: email address wrapping --- */
+    .footer-info-box-content p {
+        font-size: 12px !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Footer info icon: keep it from shrinking */
+    .footer-info-box .icon-box {
+        flex-shrink: 0 !important;
+    }
+
+    /* Footer links col: tighter spacing */
+    .footer-links {
+        margin-bottom: 28px !important;
+    }
+
+    /* Footer copyright: already centred in custom.css but reinforce */
+    .footer-copyright-text {
+        text-align: center !important;
+        margin-bottom: 8px !important;
+    }
+
+    .footer-privacy-policy ul {
+        text-align: center !important;
+    }
+
+    /* --- Sponsors section: ensure 2-col grid on phones --- */
+    .sponsors-logo-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+    }
+
+    .sponsor-logo-item {
+        flex: 0 0 calc(50% - 8px) !important;
+        max-width: calc(50% - 8px) !important;
+        min-width: 0 !important;
+    }
+
+    /* --- Page header (inner pages): tighter heading --- */
+    .page-header-box h1 {
+        font-size: 38px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* --- Section row: less bottom margin --- */
+    .section-row {
+        margin-bottom: 28px !important;
+    }
+
+    /* --- About page: founders signature wrap fix --- */
+    .pastors-signature {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+
+    .pastors-signature-img {
+        display: flex !important;
+        gap: 12px !important;
+    }
+
+    .pastors-signature-img img {
+        max-width: 110px !important;
+    }
+}
+
+/* ============================================================
+   SMALL PHONE (≤ 575px)
+   ============================================================ */
+@media (max-width: 575px) {
+
+    /* --- Hero: even smaller padding --- */
+    .hero {
+        padding: 90px 0 55px !important;
+    }
+
+    /* Hero h1: readable on tiny screens */
+    .section-title h1,
+    .hero-content h1 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* --- Hero buttons: CENTRE (override the flex-start from earlier block) --- */
+    .hero-content-body {
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    /* Hero paragraph: full width on tiny phones */
+    .hero-content .section-title p {
+        max-width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    /* --- Section headings --- */
+    .section-title h2 {
+        font-size: 24px !important;
+        line-height: 1.28 !important;
+    }
+
+    .section-title h3 {
+        font-size: 13px !important;
+        margin-bottom: 12px !important;
+    }
+
+    /* --- Section row spacing --- */
+    .section-row {
+        margin-bottom: 22px !important;
+    }
+
+    /* --- Btn-default: compact on tiny phones --- */
+    .btn-default {
+        font-size: 14px !important;
+        padding: 12px 52px 12px 14px !important;
+    }
+
+    /* --- Counter heading --- */
+    .counter-title h2 {
+        font-size: 32px !important;
+    }
+
+    /* --- Service ticker: smaller --- */
+    .service-ticker .scrolling-content span {
+        font-size: 42px !important;
+    }
+
+    /* --- CTA box heading --- */
+    .cta-box-content .section-title h2 {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* --- Page header heading --- */
+    .page-header-box h1 {
+        font-size: 30px !important;
+    }
+
+    /* --- League links: full readability --- */
+    .league-links .btn-default {
+        font-size: 13px !important;
+        padding: 12px 52px 12px 14px !important;
+    }
+
+    /* --- Team card text --- */
+    .team-content h3 {
+        font-size: 16px !important;
+    }
+
+    .team-content p {
+        font-size: 14px !important;
+    }
+
+    /* --- Contact info: stack icon above text on very small --- */
+    .contact-info-item {
+        align-items: flex-start !important;
+    }
+
+    /* --- Sponsor logos: maintain 2 col --- */
+    .sponsor-logo-item {
+        flex: 0 0 calc(50% - 8px) !important;
+        max-width: calc(50% - 8px) !important;
+    }
+
+    /* --- About content body: full 1 column --- */
+    .about-content-body {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+    }
+
+    /* --- Mission content body quote line --- */
+    .mission-content-body p {
+        padding-left: 14px !important;
+    }
+
+    /* --- Navbar: tighter on very small phones --- */
+    .navbar {
+        padding: 14px 0 !important;
+    }
+
+    /* Founders: portrait aspect on small phones */
+    .pastors-message .about-img-1 img,
+    .pastors-message .about-img-2 img {
+        aspect-ratio: 3 / 4 !important;
+    }
+}
