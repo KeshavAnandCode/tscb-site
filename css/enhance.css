@@ -1,0 +1,896 @@
+/* =====================================================
+   TSCB — Enhanced Animations & Visual Excellence
+   ===================================================== */
+
+/* ---- Scroll Progress Bar ---- */
+#tscb-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #d92800 0%, #ce9c5b 50%, #d92800 100%);
+    background-size: 200% 100%;
+    animation: progressShift 3s ease infinite;
+    z-index: 999999;
+    transition: width 0.08s linear;
+    pointer-events: none;
+}
+
+@keyframes progressShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---- Hero Section Decorative Orbs ---- */
+.hero {
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-orb-1,
+.hero-orb-2,
+.hero-orb-3 {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-orb-1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(217, 40, 0, 0.18) 0%, transparent 65%);
+    top: -300px;
+    right: -200px;
+    animation: orbDrift 12s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(206, 156, 91, 0.12) 0%, transparent 65%);
+    bottom: -100px;
+    left: -150px;
+    animation: orbDrift 16s ease-in-out infinite reverse;
+}
+
+.hero-orb-3 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(217, 40, 0, 0.08) 0%, transparent 65%);
+    top: 40%;
+    left: 30%;
+    animation: orbDrift 9s ease-in-out infinite 2s;
+}
+
+@keyframes orbDrift {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33%       { transform: translate(30px, -30px) scale(1.06); }
+    66%       { transform: translate(-20px, 20px) scale(0.96); }
+}
+
+/* ---- Hero grid overlay ---- */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero .down-arrow {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- Down arrow bounce ---- */
+.hero .down-arrow a {
+    animation: arrowBounce 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes arrowBounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(10px); }
+}
+
+/* ---- Nav hover underline animation ---- */
+.main-menu .navbar-nav > .nav-item > a {
+    position: relative;
+}
+
+.main-menu .navbar-nav > .nav-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.main-menu .navbar-nav > .nav-item > a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ---- Enhanced sticky header glass effect ---- */
+header.main-header .header-sticky.active {
+    background: rgba(0, 0, 0, 0.88) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(206, 156, 91, 0.2) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---- Enhanced Button Animations ---- */
+.btn-default {
+    letter-spacing: 0.03em;
+    transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.btn-default:active {
+    transform: scale(0.96);
+}
+
+.btn-default::before {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* ---- About image list item hover ---- */
+.about-list-item {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.about-list-item:hover {
+    transform: translateX(8px);
+}
+
+.about-list-item .icon-box {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.about-list-item:hover .icon-box {
+    transform: scale(1.15) rotate(-5deg);
+    box-shadow: 0 10px 30px rgba(217, 40, 0, 0.35);
+}
+
+/* ---- About Image Mobile Fix ---- */
+@media (max-width: 991px) {
+    .about-image {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 0 !important;
+        margin-bottom: 30px;
+    }
+
+    .about-img-1 {
+        flex: 1 1 55%;
+        width: auto !important;
+    }
+
+    .about-img-2 {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        flex: 1 1 42%;
+        width: auto !important;
+        align-self: flex-end;
+    }
+
+    .about-img-1 img {
+        width: 100%;
+    }
+
+    .about-img-2 img {
+        width: 100%;
+        border: 5px solid var(--white-color) !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-image {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .about-img-1 {
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    .about-img-2 {
+        flex: none !important;
+        width: 75% !important;
+        align-self: flex-end;
+        margin-top: -40px;
+        position: relative !important;
+    }
+}
+
+/* ---- Counter section enhanced ---- */
+.our-counter {
+    position: relative;
+    overflow: hidden;
+}
+
+.counter-box {
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease;
+}
+
+.counter-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg at 50% 50%,
+        transparent 0deg,
+        rgba(255,255,255,0.03) 60deg,
+        transparent 120deg,
+        rgba(255,255,255,0.03) 180deg,
+        transparent 240deg,
+        rgba(255,255,255,0.03) 300deg,
+        transparent 360deg);
+    animation: counterRotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes counterRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.counter-item {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.counter-item:hover {
+    transform: translateY(-6px);
+}
+
+.counter-title h2 {
+    font-size: 62px !important;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+    letter-spacing: -0.02em;
+}
+
+/* ---- Service Item enhanced hover ---- */
+.service-item {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.service-item:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18) !important;
+}
+
+.service-item .icon-box img {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.service-item:hover .icon-box img {
+    transform: scale(1.1) rotate(-8deg) !important;
+    filter: brightness(0) invert(1) !important;
+}
+
+/* ---- Ticker gradient fade edges ---- */
+.service-ticker {
+    position: relative;
+}
+
+.service-ticker::before,
+.service-ticker::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.service-ticker::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-color) 20%, transparent 100%);
+}
+
+.service-ticker::after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--primary-color) 20%, transparent 100%);
+}
+
+/* ---- Ticker text glow ---- */
+.scrolling-content span {
+    transition: text-shadow 0.3s ease;
+}
+
+.scrolling-content span:hover {
+    text-shadow: 0 0 20px rgba(217, 40, 0, 0.6);
+}
+
+/* ---- Sponsor logo shimmer on hover ---- */
+.sponsor-logo-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s ease, border-color 0.3s ease !important;
+}
+
+.sponsor-logo-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.55) 50%,
+        transparent 70%
+    );
+    transform: skewX(-15deg);
+    transition: none;
+}
+
+.sponsor-logo-item:hover::after {
+    left: 160%;
+    transition: left 0.65s ease;
+}
+
+.sponsor-logo-item:hover {
+    border-color: var(--accent-color) !important;
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 50px rgba(217, 40, 0, 0.15) !important;
+}
+
+.sponsor-logo-item img {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease !important;
+}
+
+.sponsor-logo-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ---- Mission section border accent ---- */
+.mission-content-body p {
+    border-left: 3px solid var(--accent-color) !important;
+    padding-left: 18px !important;
+    position: relative;
+    transition: border-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.mission-content-body p:hover {
+    border-left-color: var(--secondary-color) !important;
+    padding-left: 24px !important;
+}
+
+/* ---- Mission life circle enhanced ---- */
+.mission-life-circle img {
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 0 0 0 rgba(217, 40, 0, 0);
+}
+
+.mission-life-circle img:hover {
+    box-shadow: 0 0 0 8px rgba(217, 40, 0, 0.15);
+}
+
+/* ---- CTA Box ---- */
+.cta-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(217, 40, 0, 0.12) 0%, transparent 65%);
+    top: -200px;
+    right: 0;
+    pointer-events: none;
+    animation: orbDrift 14s ease-in-out infinite 1s;
+}
+
+.cta-box::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(206, 156, 91, 0.08) 0%, transparent 65%);
+    bottom: -100px;
+    left: 10%;
+    pointer-events: none;
+    animation: orbDrift 10s ease-in-out infinite reverse 3s;
+}
+
+/* ---- Footer glow border ---- */
+.main-footer {
+    position: relative;
+}
+
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+/* ---- Footer social links ---- */
+.footer-social-links ul li a {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.footer-social-links ul li a:hover {
+    transform: translateY(-6px) scale(1.15) !important;
+    box-shadow: 0 10px 25px rgba(217, 40, 0, 0.4) !important;
+}
+
+/* ---- Footer links hover ---- */
+.footer-links ul li a,
+.footer-contact .footer-info-box-content p a {
+    position: relative;
+    transition: all 0.3s ease !important;
+}
+
+.footer-links ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transition: width 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.footer-links ul li a:hover::before {
+    width: 100%;
+}
+
+/* ---- Page header enhanced ---- */
+.page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(217, 40, 0, 0.12) 0%, transparent 60%);
+    bottom: -250px;
+    right: -100px;
+    pointer-events: none;
+    animation: orbDrift 15s ease-in-out infinite;
+}
+
+/* ---- Section title accent line ---- */
+.section-title h3 {
+    letter-spacing: 0.08em;
+}
+
+/* ---- Preloader gradient ---- */
+.preloader {
+    background: linear-gradient(135deg, #d92800 0%, #b82200 100%) !important;
+}
+
+/* ---- Image reveal enhanced ---- */
+.reveal {
+    overflow: hidden;
+}
+
+/* ---- Image hover scale (team-member, ministries) ---- */
+.team-image,
+.ministries-image {
+    overflow: hidden;
+    border-radius: 0 0 100px 0;
+}
+
+.team-member-item {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s ease;
+}
+
+.team-member-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.15);
+}
+
+/* ---- Breadcrumb enhanced ---- */
+.breadcrumb-item a {
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--accent-color);
+}
+
+/* ---- About page about-image enhanced ---- */
+.about-img-1 img,
+.about-img-2 img {
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.about-img-1:hover img,
+.about-img-2:hover img {
+    transform: scale(1.04) !important;
+}
+
+/* ---- Services section background animated dots ---- */
+.our-services {
+    position: relative;
+    overflow: hidden;
+}
+
+.our-services::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.our-services .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- Readmore btn enhanced hover ---- */
+.readmore-btn {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.readmore-btn:hover {
+    transform: scale(1.15) rotate(45deg) !important;
+    box-shadow: 0 10px 30px rgba(217, 40, 0, 0.45) !important;
+}
+
+/* ---- WOW animations enhanced ---- */
+.wow {
+    will-change: transform, opacity;
+}
+
+/* ---- Smooth scroll snap feel ---- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---- Section transition spacer ---- */
+.our-counter,
+.our-mission,
+.our-services,
+.our-sponsors-section,
+.cta-box {
+    transition: opacity 0.3s ease;
+}
+
+/* ---- Hero h1 glow ---- */
+.hero .section-title h1,
+.hero .section-title h3 {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- About us section enhanced ---- */
+.about-us {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---- Floating cricket ball decorative element ---- */
+@keyframes floatBall {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* ---- Counter entrance animation ---- */
+@keyframes counterSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter-item.is-visible {
+    animation: counterSlideUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.counter-item.is-visible:nth-child(1) { animation-delay: 0s; }
+.counter-item.is-visible:nth-child(2) { animation-delay: 0.12s; }
+.counter-item.is-visible:nth-child(3) { animation-delay: 0.24s; }
+.counter-item.is-visible:nth-child(4) { animation-delay: 0.36s; }
+
+/* ---- Sponsors section entrance ---- */
+.sponsor-logo-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.45s ease, border-color 0.3s ease !important;
+}
+
+.sponsor-logo-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sponsor-logo-item.is-visible:nth-child(1) { transition-delay: 0s; }
+.sponsor-logo-item.is-visible:nth-child(2) { transition-delay: 0.12s; }
+.sponsor-logo-item.is-visible:nth-child(3) { transition-delay: 0.24s; }
+
+/* ---- Mission image floating animation ---- */
+.mission-img figure {
+    animation: missionFloat 8s ease-in-out infinite;
+}
+
+@keyframes missionFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+}
+
+/* ---- Mobile responsive enhancements ---- */
+@media (max-width: 767px) {
+    .hero-orb-1 {
+        width: 350px;
+        height: 350px;
+    }
+
+    .hero-orb-2 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-orb-3 {
+        display: none;
+    }
+
+    .service-ticker::before,
+    .service-ticker::after {
+        width: 60px;
+    }
+
+    .counter-title h2 {
+        font-size: 44px !important;
+    }
+}
+
+/* ---- Smooth image hover on service items ---- */
+.service-item .icon-box {
+    overflow: hidden;
+    position: relative;
+}
+
+/* ---- Service item icon shine effect ---- */
+.service-item .icon-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%);
+    transform: skewX(-15deg);
+    transition: none;
+}
+
+.service-item:hover .icon-box::after {
+    left: 150%;
+    transition: left 0.5s ease;
+}
+
+/* ---- Service section card border glow on hover ---- */
+.service-item {
+    border: 1px solid transparent;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.5s ease,
+                border-color 0.3s ease !important;
+}
+
+/* ---- Section row enhanced ---- */
+.section-row {
+    position: relative;
+}
+
+/* ---- Animated gradient underline on h2 accent text ---- */
+.section-title h2 span {
+    background: linear-gradient(90deg, #d92800, #ff5733, #d92800);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGradient 4s ease infinite;
+}
+
+@keyframes textGradient {
+    0%   { background-position: 0% center; }
+    50%  { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+/* ---- Footer logo hover ---- */
+.footer-logo img {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* ---- Breadcrumb active pulsing dot ---- */
+.breadcrumb-item.active a {
+    position: relative;
+}
+
+/* ---- Hero h3 glow on load ---- */
+@keyframes heroSubtitleFade {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- About us list item stagger ---- */
+.about-list-item.is-visible {
+    animation: counterSlideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.about-list-item.is-visible:nth-child(1) { animation-delay: 0s; }
+.about-list-item.is-visible:nth-child(2) { animation-delay: 0.1s; }
+.about-list-item.is-visible:nth-child(3) { animation-delay: 0.2s; }
+.about-list-item.is-visible:nth-child(4) { animation-delay: 0.3s; }
+
+/* ---- CTA box text glow ---- */
+.cta-box .section-title h2 {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- Service footer hover ---- */
+.service-footer {
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-footer {
+    transform: translateX(4px);
+}
+
+/* ---- Sponsors section background ---- */
+.our-sponsors-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.our-sponsors-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(206, 156, 91, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+}
+
+.our-sponsors-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- About content body grid on mobile ---- */
+@media (max-width: 575px) {
+    .about-content-body {
+        gap: 15px;
+    }
+
+    .about-list-item {
+        width: 100%;
+    }
+}
+
+/* ---- Responsive counter ---- */
+@media (max-width: 575px) {
+    .counter-title h2 {
+        font-size: 36px !important;
+    }
+
+    .counter-item {
+        border-right: none !important;
+        border-bottom: 1px solid var(--divider-color);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .counter-box .col-lg-3:last-child .counter-item {
+        border-bottom: none !important;
+    }
+}
+
+/* ---- Our mission orb ---- */
+.our-mission {
+    position: relative;
+    overflow: hidden;
+}
+
+.our-mission::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(206, 156, 91, 0.08) 0%, transparent 65%);
+    top: -100px;
+    right: -150px;
+    pointer-events: none;
+    animation: orbDrift 18s ease-in-out infinite;
+}
+
+/* ---- Magnetic button cursor hint ---- */
+.btn-default,
+.readmore-btn {
+    cursor: none;
+}
+
+/* ---- Highlight nav link underline for current page ---- */
+.main-menu .nav-item.active > a,
+.main-menu .nav-item.current > a {
+    color: var(--accent-color) !important;
+}
+
+/* ---- Ticker items enhanced ---- */
+.scrolling-content span {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* ---- Enhanced image figure border radius ---- */
+.about-img-2 figure {
+    overflow: hidden;
+}
+
+/* ---- Box shadow on sponsor section cards ---- */
+.sponsors-logo-grid {
+    position: relative;
+}
+
+/* ---- Page load body clip ---- */
+body {
+    animation: bodyReveal 0.5s ease both;
+}
+
+@keyframes bodyReveal {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
