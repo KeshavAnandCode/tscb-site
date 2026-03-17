@@ -588,29 +588,211 @@ body {
     to   { opacity: 1; }
 }
 
-/* ---- Mobile responsive ---- */
-@media (max-width: 767px) {
-    .hero-orb-1 { width: 350px; height: 350px; }
-    .hero-orb-2 { width: 250px; height: 250px; }
-    .hero-orb-3 { display: none; }
+/* ============================================================
+   ABOUT.HTML — Single-image first section fix
+   .page-about-us now only has .about-img-1 (no overlay).
+   Remove the padding-top that was there for the second image
+   and make the image fill the column properly.
+   ============================================================ */
 
-    .service-ticker::before,
-    .service-ticker::after { width: 60px; }
-
-    .counter-title h2 { font-size: 44px !important; }
+.page-about-us .about-image {
+    padding-top: 0 !important;
+    max-width: 100% !important;
+    position: relative !important;
 }
 
+.page-about-us .about-img-1 {
+    width: 100% !important;
+}
+
+.page-about-us .about-img-1 figure {
+    display: block !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+}
+
+.page-about-us .about-img-1 img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 20px !important;
+}
+
+/* Pastors section: remove inline dimension override, let CSS size it */
+.pastors-message .about-img-2 img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* ============================================================
+   DESKTOP  (≥ 1200px)
+   ============================================================ */
+@media (min-width: 1200px) {
+    .page-about-us .about-img-1 img {
+        aspect-ratio: 3 / 4 !important;
+    }
+}
+
+/* ============================================================
+   TABLET  (≤ 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+    /* Shrink orbs so they don't cause scrollbar */
+    .hero-orb-1 { width: 500px; height: 500px; }
+    .hero-orb-2 { width: 350px; height: 350px; }
+
+    /* Mission life circle is decorative — hide on tablet to simplify */
+    .mission-life-circle {
+        display: none !important;
+    }
+}
+
+/* ============================================================
+   TABLET PORTRAIT  (≤ 991px)
+   ============================================================ */
+@media (max-width: 991px) {
+    /* About single-image: center and constrain */
+    .page-about-us .about-image {
+        max-width: 580px !important;
+        margin: 0 auto 35px !important;
+    }
+
+    /* Counter items: remove divider borders at tablet */
+    .counter-item {
+        border-right: none !important;
+        padding-right: 15px !important;
+    }
+
+    /* CTA button: center on smaller screens */
+    .cta-box-btn {
+        text-align: center !important;
+        margin-top: 20px !important;
+    }
+
+    .cta-box-btn::before {
+        display: none !important;
+    }
+
+    /* Service items: consistent margin when they wrap */
+    .service-item {
+        margin-bottom: 24px !important;
+    }
+}
+
+/* ============================================================
+   MOBILE  (≤ 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+    /* Orbs: shrink and simplify */
+    .hero-orb-1 { width: 300px; height: 300px; top: -150px; right: -100px; }
+    .hero-orb-2 { width: 220px; height: 220px; bottom: -80px; left: -80px; }
+    .hero-orb-3 { display: none; }
+
+    /* Hero: prevent overflow */
+    .hero { overflow: hidden; }
+    .hero .container { overflow: visible; }
+
+    /* Counter h2 */
+    .counter-title h2 { font-size: 42px !important; }
+
+    /* Ticker fade edges narrower */
+    .service-ticker::before,
+    .service-ticker::after { width: 50px; }
+
+    /* Sponsors grid: 2 col on mobile */
+    .sponsors-logo-grid {
+        gap: 16px !important;
+    }
+    .sponsor-logo-item {
+        min-width: 130px !important;
+        max-width: 48% !important;
+        padding: 14px 16px !important;
+    }
+
+    /* About single-image mobile */
+    .page-about-us .about-image {
+        max-width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+    .page-about-us .about-img-1 img {
+        aspect-ratio: 16 / 10 !important;
+    }
+
+    /* Mission content first on mobile */
+    .our-mission .col-lg-6:last-child {
+        margin-top: 30px !important;
+    }
+
+    /* CTA text smaller */
+    .cta-box-content .section-title h2 {
+        font-size: 22px !important;
+    }
+
+    /* Footer: better spacing */
+    .footer-widget {
+        margin-bottom: 30px !important;
+    }
+
+    /* Nav "Our Partners" button in header: hide on very small */
+    .header-btn .btn-default {
+        display: none !important;
+    }
+}
+
+/* ============================================================
+   SMALL MOBILE  (≤ 575px)
+   ============================================================ */
 @media (max-width: 575px) {
-    .counter-title h2 { font-size: 36px !important; }
+    /* Hero title size */
+    .section-title h1,
+    .hero-content h1 {
+        font-size: 30px !important;
+        line-height: 1.18 !important;
+    }
+
+    /* Counter: stack to 1 column, show divider lines */
+    .counter-title h2 { font-size: 34px !important; }
 
     .counter-item {
         border-right: none !important;
-        border-bottom: 1px solid var(--divider-color);
-        padding-bottom: 20px;
-        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+        padding-bottom: 24px !important;
+        margin-bottom: 24px !important;
     }
 
     .counter-box .col-lg-3:last-child .counter-item {
         border-bottom: none !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Sponsors: single column */
+    .sponsor-logo-item {
+        min-width: calc(50% - 12px) !important;
+        max-width: calc(50% - 12px) !important;
+    }
+
+    /* Hero buttons: stack */
+    .hero-content-body {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+    }
+
+    .hero-content-body .btn-default {
+        margin-left: 0 !important;
+        width: auto !important;
+    }
+
+    /* About list items: single column */
+    .about-content-body {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Section title padding */
+    .section-title {
+        margin-bottom: 24px !important;
     }
 }
