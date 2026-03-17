@@ -10635,34 +10635,10 @@ body {
     width: 100% !important;
 }
 
-.page-about-us .about-img-1 figure {
-    display: block !important;
-    border-radius: 20px !important;
-    overflow: hidden !important;
-}
-
-.page-about-us .about-img-1 img {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 4 / 3 !important;
-    object-fit: cover !important;
-    object-position: center center !important;
-    border-radius: 20px !important;
-}
-
 /* Pastors section: remove inline dimension override, let CSS size it */
 .pastors-message .about-img-2 img {
     width: 100% !important;
     height: auto !important;
-}
-
-/* ============================================================
-   DESKTOP  (≥ 1200px)
-   ============================================================ */
-@media (min-width: 1200px) {
-    .page-about-us .about-img-1 img {
-        aspect-ratio: 3 / 4 !important;
-    }
 }
 
 /* ============================================================
@@ -10828,28 +10804,50 @@ body {
 }
 
 /* ============================================================
-   CRICKET IMAGE (first about section) — Natural aspect ratio,
-   width shrinks to fit; height constrained to match text column.
+   CRICKET IMAGE — blurred-backdrop frame
+   The .cricket-blur-bg div fills the full column with a blurred
+   version of the same image; the real img sits centered on top
+   at its natural aspect ratio so no void remains.
    ============================================================ */
-.page-about-us .about-img-1 {
-    width: auto !important;
-    max-width: 100% !important;
+.page-about-us .about-img-1 figure {
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+    height: 490px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow:
+        0 0 0 2px rgba(217, 40, 0, 0.35),
+        0 0 0 5px rgba(206, 156, 91, 0.15),
+        0 16px 56px rgba(0, 0, 0, 0.45) !important;
 }
 
-.page-about-us .about-img-1 figure {
-    display: flex !important;
-    justify-content: center !important;
+.page-about-us .about-img-1 .cricket-blur-bg {
+    position: absolute !important;
+    inset: -40px !important;
+    background: url('../images/cricket.webp') center / cover no-repeat !important;
+    filter: blur(28px) brightness(0.55) saturate(1.4) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
 }
 
 .page-about-us .about-img-1 img {
+    position: relative !important;
+    z-index: 1 !important;
     width: auto !important;
     max-width: 100% !important;
-    height: auto !important;
-    max-height: 480px !important;
-    aspect-ratio: unset !important;
-    object-position: center center !important;
+    height: 100% !important;
+    object-fit: contain !important;
     display: block !important;
-    margin: 0 auto !important;
+    aspect-ratio: unset !important;
+    filter: drop-shadow(0 6px 28px rgba(0, 0, 0, 0.5)) !important;
+}
+
+@media (max-width: 767px) {
+    .page-about-us .about-img-1 figure {
+        height: 320px !important;
+    }
 }
 
 /* ============================================================
