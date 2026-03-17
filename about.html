@@ -67,30 +67,20 @@
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="#">Dallas Regionals</a>
-                                    <ul>
-                                        <li class="nav-item"><a class="nav-link" href="dallas.html">Dallas Regionals</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="dallas-teams.html">Dallas
-                                                Teams</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item submenu"><a class="nav-link" href="#">Austin Regionals</a>
-                                    <ul>
-                                        <li class="nav-item"><a class="nav-link" href="austin.html">Austin Regionals</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="austin-teams.html">Austin
-                                                Teams</a></li>
-                                    </ul>
-                                </li>
+
+                                        <li class="nav-item"><a class="nav-link" href="dallas.html">Dallas Regionals</a></li>
+
+
+                                        <li class="nav-item"><a class="nav-link" href="austin.html">Austin Regionals</a></li>
+
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                                <li class="nav-item highlighted-menu"><a class="nav-link" href="partners.html">Our
+                                <li class="nav-item highlighted-menu"><a class="nav-link" href="sponsors.html">Our
                                         Partners</a></li>
                             </ul>
                         </div>
                         <!-- Let’s Start Button Start -->
                         <div class="header-btn d-inline-flex">
-                            <a href="partners.html" class="btn-default">Our Partners</a>
+                            <a href="sponsors.html" class="btn-default">Our Partners</a>
                         </div>
                         <!-- Let’s Start Button End -->
                     </div>
@@ -800,151 +790,150 @@
 
 
 
-
-        <!-- Footer Start -->
-        <footer class="main-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <!-- About Footer Start -->
-                        <div class="about-footer">
-                            <!-- Footer Logo Start -->
-                            <div class="footer-logo">
-                                <img src="images/logo.png" alt="Footer Logo" style="width: 100px; height: auto;">
-                            </div>
-                            <!-- Footer Logo End -->
-
-                            <!-- About Footer Content Start -->
-                            <div class="about-footer-content">
-                                <p id="age-text">Loading...</p>
-
-                                <script>
-                                    const foundingDate = new Date("2025-12-29");
-                                    const now = new Date();
-
-                                    const months = (now.getFullYear() - foundingDate.getFullYear()) * 12
-                                        + (now.getMonth() - foundingDate.getMonth());
-
-                                    const years = Math.floor(months / 12);
-                                    const remainingMonths = months % 12;
-
-                                    let duration = "";
-                                    if (years > 0) duration += `${years} year${years > 1 ? "s" : ""}`;
-                                    if (years > 0 && remainingMonths > 0) duration += " and ";
-                                    if (remainingMonths > 0) duration += `${remainingMonths} month${remainingMonths > 1 ? "s" : ""}`;
-                                    if (months === 0) duration = "less than a month";
-
-                                    document.getElementById("age-text").textContent =
-                                        `TSCB has been proudly serving its community for ${duration}`;
-                                </script>
-                            </div>
-                            <!-- Footer Social Links Start -->
-                            <div class="footer-social-links">
-                                <ul>
-                                    <li><a href="https://www.instagram.com/texasscholasticcricketboard/"><i
-                                                class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="https://www.youtube.com/channel/UCdFfqkVWDJyFlFEEKfq27wg"><i
-                                                class="fa-brands fa-youtube"></i></a></li>
-
-                                </ul>
-                            </div>
-                            <!-- Footer Social Links End -->
-
+    <!-- Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- About Footer Start -->
+                    <div class="about-footer">
+                        <!-- Footer Logo Start -->
+                        <div class="footer-logo">
+                            <img src="images/logo.png" alt="Footer Logo" style="width: 100px; height: auto;">
                         </div>
-                        <!-- About Footer End -->
-                    </div>
+                        <!-- Footer Logo End -->
 
-                    <div class="col-lg-2 col-md-3 col-6">
-                        <!-- About Links Start -->
-                        <div class="footer-links">
-                            <h3>quick links</h3>
+                        <!-- About Footer Content Start -->
+                        <div class="about-footer-content">
+                            <p id="age-text">Loading...</p>
+
+                            <script>
+                                const foundingDate = new Date("2025-12-29");
+                                const now = new Date();
+
+                                const months = (now.getFullYear() - foundingDate.getFullYear()) * 12
+                                    + (now.getMonth() - foundingDate.getMonth());
+
+                                const years = Math.floor(months / 12);
+                                const remainingMonths = months % 12;
+
+                                let duration = "";
+                                if (years > 0) duration += `${years} year${years > 1 ? "s" : ""}`;
+                                if (years > 0 && remainingMonths > 0) duration += " and ";
+                                if (remainingMonths > 0) duration += `${remainingMonths} month${remainingMonths > 1 ? "s" : ""}`;
+                                if (months === 0) duration = "less than a month";
+
+                                document.getElementById("age-text").textContent =
+                                    `TSCB has been proudly serving its community for ${duration}`;
+                            </script>
+                        </div>
+                        <!-- Footer Social Links Start -->
+                        <div class="footer-social-links">
                             <ul>
-                                <li><a href="/">home</a></li>
-                                <li><a href="/about.html">about</a></li>
-                                <li><a href="/sponsors.html">sponsors</a></li>
-                                <li><a href="/contact.html">contact</a></li>
+                                <li><a href="https://www.instagram.com/texasscholasticcricketboard/"><i
+                                            class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCdFfqkVWDJyFlFEEKfq27wg"><i class="fa-brands fa-youtube"></i></a></li>
+
                             </ul>
                         </div>
-                        <!-- About Links End -->
+                        <!-- Footer Social Links End -->
+
                     </div>
-
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <!-- About Links Start -->
-                        <div class="footer-links">
-                            <h3>our cricket</h3>
-                            <ul>
-                                <li><a href="/dallas.html">dallas regionals</a></li>
-                                <li><a href="/austin.html">austin regionals</a></li>
-                                <li><a href="https://cricclubs.com/TexasScholasticCricketBoard">cricclubs league</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- About Links End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-5">
-                        <!-- About Links Start -->
-                        <div class="footer-contact">
-                            <h3>contact</h3>
-                            <!-- Footer Contact Details Start -->
-                            <div class="footer-contact-details">
-                                <!-- Footer Info Box Start -->
-                                <div class="footer-info-box">
-                                    <div class="icon-box">
-                                        <img src="images/icon-phone.svg" alt="">
-                                    </div>
-                                    <div class="footer-info-box-content">
-                                        <p>(+1) (945) 900-1148</p>
-                                    </div>
-                                </div>
-                                <!-- Footer Info Box End -->
-
-                                <!-- Footer Info Box Start -->
-                                <div class="footer-info-box">
-                                    <div class="icon-box">
-                                        <img src="images/icon-mail.svg" alt="">
-                                    </div>
-                                    <div class="footer-info-box-content">
-                                        <p>texasscholasticcricketboard@gmail.com</p>
-                                    </div>
-                                </div>
-                                <!-- Footer Info Box End -->
-
-
-                            </div>
-                            <!-- Footer Contact Details End -->
-                        </div>
-                        <!-- About Links End -->
-                    </div>
+                    <!-- About Footer End -->
                 </div>
 
-                <!-- Footer Copyright Section Start -->
-                <div class="footer-copyright">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-6">
-                            <!-- Footer Copyright Start -->
-                            <div class="footer-copyright-text">
-                                <p>Copyright 2026 Texas Scholastic Cricket Board. All Rights Reserved.</p>
-                            </div>
-                            <!-- Footer Copyright End -->
-                        </div>
-
-                        <div class="col-lg-6 col-md-6">
-                            <!-- Footer Social Link Start -->
-                            <div class="footer-privacy-policy">
-                                <ul>
-                                    <li><a href="#">terms & conditions</a></li>
-                                    <li><a href="#">liability policy</a></li>
-                                </ul>
-                            </div>
-                            <!-- Footer Social Link End -->
-                        </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <!-- About Links Start -->
+                    <div class="footer-links">
+                        <h3>quick links</h3>
+                        <ul>
+                            <li><a href="/">home</a></li>
+                            <li><a href="/about.html">about</a></li>
+                            <li><a href="/sponsors.html">sponsors</a></li>
+                            <li><a href="/contact.html">contact</a></li>
+                        </ul>
                     </div>
+                    <!-- About Links End -->
                 </div>
-                <!-- Footer Copyright Section End -->
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <!-- About Links Start -->
+                    <div class="footer-links">
+                        <h3>our cricket</h3>
+                        <ul>
+                            <li><a href="/dallas.html">dallas regionals</a></li>
+                            <li><a href="/austin.html">austin regionals</a></li>
+                            <li><a href="https://cricclubs.com/TexasScholasticCricketBoard">dallas cricclubs league</a></li>
+                            <li><a href="https://cricclubs.com/USHSC/series-list/QKoRw7aJTppHXMxmRSTXmg?seriesName=USAHSC%25202026">austin cricclubs league</a></li>
+                        </ul>
+                    </div>
+                    <!-- About Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-5">
+                    <!-- About Links Start -->
+                    <div class="footer-contact">
+                        <h3>contact</h3>
+                        <!-- Footer Contact Details Start -->
+                        <div class="footer-contact-details">
+                            <!-- Footer Info Box Start -->
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-phone.svg" alt="">
+                                </div>
+                                <div class="footer-info-box-content">
+                                    <p>(+1) (945) 900-1148</p>
+                                </div>
+                            </div>
+                            <!-- Footer Info Box End -->
+
+                            <!-- Footer Info Box Start -->
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-mail.svg" alt="">
+                                </div>
+                                <div class="footer-info-box-content">
+                                    <p>texasscholasticcricketboard@gmail.com</p>
+                                </div>
+                            </div>
+                            <!-- Footer Info Box End -->
+
+
+                        </div>
+                        <!-- Footer Contact Details End -->
+                    </div>
+                    <!-- About Links End -->
+                </div>
             </div>
-        </footer>
-        <!-- Footer End -->
+
+            <!-- Footer Copyright Section Start -->
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <!-- Footer Copyright Start -->
+                        <div class="footer-copyright-text">
+                            <p>Copyright 2026 Texas Scholastic Cricket Board. All Rights Reserved.</p>
+                        </div>
+                        <!-- Footer Copyright End -->
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <!-- Footer Social Link Start -->
+                        <div class="footer-privacy-policy">
+                            <ul>
+                                <li><a href="#">terms & conditions</a></li>
+                                <li><a href="#">liability policy</a></li>
+                            </ul>
+                        </div>
+                        <!-- Footer Social Link End -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Copyright Section End -->
+        </div>
+    </footer>
+    <!-- Footer End -->
+
 
         <!-- Jquery Library File -->
         <script src="js/jquery-3.7.1.min.js"></script>
