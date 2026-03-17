@@ -797,114 +797,85 @@ body {
 }
 
 /* ============================================================
-   CRICKET IMAGE (first about section) — Fix portrait ratio
-   The 3/4 ratio on desktop made it excessively tall.
-   Use a landscape ratio that fits the column nicely.
+   CRICKET IMAGE (first about section) — Natural aspect ratio
+   Let the image display at its own proportions; no forced crop.
    ============================================================ */
-@media (min-width: 1200px) {
-    .page-about-us .about-img-1 img {
-        aspect-ratio: 4 / 3 !important;
-    }
-}
-
 .page-about-us .about-img-1 img {
-    max-height: 480px !important;
-    object-position: center 20% !important;
+    aspect-ratio: unset !important;
+    max-height: none !important;
+    height: auto !important;
+    object-position: center center !important;
 }
 
 /* ============================================================
-   FOUNDERS SECTION — Responsive staggered side-by-side layout
-   Completely replaces the position:absolute overlay from
-   custom.css which broke on every device below desktop.
+   FOUNDERS SECTION — Equal-sized side-by-side layout
+   Both founders shown at identical size with matching borders.
+   Stacks vertically on mobile.
    ============================================================ */
 
-/* Remove the padding-top reserved for the overlay */
 .pastors-message .about-image {
     padding-top: 0 !important;
     display: flex !important;
     flex-direction: row !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
+    align-items: stretch !important;
+    gap: 12px !important;
 }
 
-/* Left image: taller, primary founder */
-.pastors-message .about-img-1 {
-    position: static !important;
-    width: 60% !important;
-    flex-shrink: 0 !important;
-}
-
-/* Right image: staggered down slightly for visual depth */
+/* Both images exactly equal width */
+.pastors-message .about-img-1,
 .pastors-message .about-img-2 {
     position: static !important;
     top: auto !important;
     right: auto !important;
-    width: 40% !important;
-    flex-shrink: 0 !important;
-    margin-top: 40px !important;
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    margin-top: 0 !important;
 }
 
 .pastors-message .about-img-1 figure,
 .pastors-message .about-img-2 figure {
     display: block !important;
+    height: 100% !important;
     border-radius: 16px !important;
     overflow: hidden !important;
 }
 
-.pastors-message .about-img-1 img {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 3 / 4 !important;
-    object-fit: cover !important;
-    object-position: top center !important;
-    border-radius: 16px !important;
-    border: none !important;
-}
-
+/* Identical treatment on both images */
+.pastors-message .about-img-1 img,
 .pastors-message .about-img-2 img {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     aspect-ratio: 3 / 4 !important;
     object-fit: cover !important;
     object-position: top center !important;
     border-radius: 16px !important;
-    border: 5px solid white !important;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18) !important;
+    border: 4px solid rgba(255, 255, 255, 0.85) !important;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16) !important;
 }
 
 /* ---- Founders: tablet (≤ 991px) ---- */
 @media (max-width: 991px) {
     .pastors-message .about-image {
-        max-width: 560px !important;
+        max-width: 520px !important;
         margin: 0 auto 35px !important;
         gap: 10px !important;
     }
 
-    .pastors-message .about-img-1 {
-        width: 57% !important;
-    }
-
+    .pastors-message .about-img-1,
     .pastors-message .about-img-2 {
-        width: 43% !important;
-        margin-top: 28px !important;
-    }
-
-    .pastors-message .about-img-2 img {
-        border-width: 4px !important;
+        width: 50% !important;
+        flex: 0 0 50% !important;
     }
 }
 
 /* ---- Founders: mobile (≤ 767px) ---- */
 @media (max-width: 767px) {
     .pastors-message .about-image {
-        max-width: 480px !important;
+        max-width: 420px !important;
         gap: 8px !important;
     }
 
-    .pastors-message .about-img-2 {
-        margin-top: 20px !important;
-    }
-
+    .pastors-message .about-img-1 img,
     .pastors-message .about-img-2 img {
         border-width: 3px !important;
     }
@@ -922,17 +893,35 @@ body {
     .pastors-message .about-img-1,
     .pastors-message .about-img-2 {
         width: 100% !important;
-        margin-top: 0 !important;
+        flex: 0 0 100% !important;
     }
 
     .pastors-message .about-img-1 img,
     .pastors-message .about-img-2 img {
         aspect-ratio: 4 / 3 !important;
-        max-height: 280px !important;
+        border-width: 3px !important;
         border-radius: 12px !important;
     }
+}
 
-    .pastors-message .about-img-2 img {
-        border-width: 3px !important;
-    }
+/* ============================================================
+   COUNTER HOVER — Distinct color change (not orange/cream)
+   The default cream (#f3dbbb) blends into the accent color.
+   On hover: crisp white with a blue-tinted glow to contrast.
+   ============================================================ */
+.counter-item:hover .counter-title h2 {
+    color: #ffffff !important;
+    text-shadow: 0 0 24px rgba(130, 200, 255, 0.55),
+                 0 0 8px rgba(130, 200, 255, 0.35) !important;
+    transition: color 0.35s ease, text-shadow 0.35s ease !important;
+}
+
+.counter-item:hover .counter-content h3 {
+    color: #ffffff !important;
+    transition: color 0.35s ease !important;
+}
+
+.counter-title h2,
+.counter-content h3 {
+    transition: color 0.35s ease, text-shadow 0.35s ease;
 }
