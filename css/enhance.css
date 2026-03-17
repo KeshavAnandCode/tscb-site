@@ -978,18 +978,27 @@ body {
         margin-top: 30px !important;
     }
 
-    /* Fix inline-flex reveal figure so it fills full width on mobile */
+    /* Fix reveal figure on mobile: bypass the GSAP slide-in (xPercent: -100
+       initial state) and just show the image centred and full-width. */
     .mission-img .reveal,
     .mission-img figure {
         display: block !important;
         width: 100% !important;
+        /* Override GSAP inline transform/visibility so image is always visible */
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     /* Landscape aspect-ratio on mobile; override height:100% from .reveal img */
     .mission-img img {
+        display: block !important;
+        width: 100% !important;
         height: auto !important;
+        margin: 0 auto !important;
         aspect-ratio: 16 / 9 !important;
         border-radius: 0 0 50px 0 !important;
+        transform: none !important;
     }
 
     /* CTA box: centre button at tablet */
