@@ -10548,15 +10548,24 @@ header.main-header .header-sticky.active {
     animation: orbDrift 15s ease-in-out infinite;
 }
 
-/* ---- Animated gradient on accent spans ---- */
+/* ---- Accent spans: solid colour guaranteed on every device ---- */
 .section-title h2 span,
 .section-title h1 span {
-    background: linear-gradient(90deg, #d92800 0%, #ff5c38 40%, #d92800 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: textGradientShift 4s ease infinite;
+    color: #d92800;
+}
+
+/* ---- Upgrade to animated gradient where background-clip:text works ---- */
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+    .section-title h2 span,
+    .section-title h1 span {
+        background: linear-gradient(90deg, #d92800 0%, #ff5c38 40%, #d92800 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        animation: textGradientShift 4s ease infinite;
+    }
 }
 
 @keyframes textGradientShift {
@@ -10968,4 +10977,5 @@ body {
 .counter-content h3 {
     transition: color 0.35s ease, text-shadow 0.35s ease;
 }
+
 
